@@ -12,12 +12,12 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from app.api import chat, documents
+from app.api import chat_router, documents_router
 from app.config import settings
 
-# A simple, readable log format. In later phases we'll log each pipeline
-# step ([UPLOAD], [PARSE], [CHUNK], [EMBED], [QUERY], ...) so the RAG
-# pipeline is observable while you learn it.
+# Each pipeline step logs a tagged line ([UPLOAD], [PARSE], [CHUNK],
+# [EMBED], [QUERY], [MULTIQUERY], [FUSE], [RETRIEVE], [LLM]) so the whole
+# RAG pipeline is observable as it runs.
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s %(levelname)s %(name)s: %(message)s",
@@ -41,8 +41,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(documents.router)
-app.include_router(chat.router)
+app.include_router(documents_router)
+app.include_router(chat_router)
 
 
 @app.get("/api/health")
@@ -53,8 +53,8 @@ def health_check():
 @app.exception_handler(Exception)
 async def unhandled_exception_handler(request: Request, exc: Exception):
     """
-    Last-resort safety net (Phase 10): any exception we didn't anticipate
-    and turn into a proper HTTPException still returns clean JSON with a
+    Last-resort safety net: any exception we didn't anticipate and turn
+    into a proper HTTPException still returns clean JSON with a
     500 status instead of leaking a raw stack trace to the frontend.
     Specific, expected failures (bad PDF, empty question, LLM error, ...)
     are handled with precise HTTPExceptions closer to where they happen —

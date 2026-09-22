@@ -6,23 +6,25 @@ pydantic==2.10.4
 pydantic-settings==2.7.0
 python-dotenv==1.0.1
 
-# --- PDF text extraction (Phase 2) ---
+# --- PDF text extraction ---
 pymupdf==1.25.1
 
-# --- Chunking (Phase 2) ---
+# --- Chunking ---
 # Only the lightweight text-splitters package, not the full LangChain
 # framework -- this is the one place LangChain genuinely simplifies
-# something (paragraph/sentence-aware recursive splitting) without
-# pulling in an agent framework we don't need.
+# something (paragraph/sentence-aware recursive splitting).
 langchain-text-splitters==0.3.4
 
-# --- Embeddings + reranking (Phase 3, Phase 8) ---
+# --- Embeddings + cross-encoder reranking ---
 sentence-transformers==3.3.1
 
-# --- Vector database (Phase 3) ---
+# --- Vector database (dense retrieval leg) ---
 chromadb
 
-# --- LLM calls (Phase 5) ---
-# The OpenAI SDK also talks to any OpenAI-compatible endpoint, including
-# Ollama's local server -- see app/services/llm.py and .env's LLM_PROVIDER.
+# --- BM25 keyword search (sparse retrieval leg of hybrid search) ---
+rank-bm25==0.2.2
+
+# --- LLM calls ---
+# The OpenAI SDK also talks to any OpenAI-compatible endpoint; here it
+# points at the local Ollama server (see app/rag.py).
 openai==1.58.1
