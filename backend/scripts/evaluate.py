@@ -1,5 +1,5 @@
 """
-RAG evaluation script (Phase 9).
+Retrieval evaluation.
 
 CONCEPT — what these metrics mean and why they matter.
 
@@ -7,18 +7,15 @@ CONCEPT — what these metrics mean and why they matter.
   document appear ANYWHERE in the top-K retrieved chunks? Hit@1 is strict
   (the single best match must be right); Hit@5 is more forgiving. If
   Hit@5 is high but Hit@1 is low, retrieval is finding the right document
-  but not ranking it first — a signal that reranking (Phase 8) or a
-  smaller TOP_K might help precision.
+  but not ranking it first — which is exactly what reranking fixes.
 
-  Retrieval latency: wall-clock time for question -> embedding -> vector
-  search -> results. This is the part of the pipeline you can most easily
-  optimize (smaller embedding model, fewer candidates, caching) since it
-  doesn't depend on an external LLM API's response time.
+  Retrieval latency: wall-clock time for the whole pipeline — query
+  expansion, both retrieval legs, fusion, and reranking. Turn stages off
+  in .env (ENABLE_MULTI_QUERY, ENABLE_HYBRID, ENABLE_RERANKER) and re-run
+  to see what each one costs and what it buys.
 
-This script measures RETRIEVAL quality only (not generation quality —
-"is the final answer correct" requires either human judgment or a more
-elaborate LLM-as-judge setup, which is a Phase 10 extension, not
-something to fake numbers for here).
+This measures RETRIEVAL quality only. Whether the final answer is correct
+needs human judgment or an LLM-as-judge setup, not a number invented here.
 
 USAGE
     Upload the documents named in eval_dataset.json through the running
@@ -28,8 +25,9 @@ USAGE
         source .venv/bin/activate
         python scripts/evaluate.py
 
-    Results are computed from whatever is actually indexed right now —
-    nothing here is hard-coded or fabricated.
+    Ollama must be running if ENABLE_MULTI_QUERY is on, since expansion
+    calls llama3. Results are computed from whatever is indexed right
+    now — nothing here is hard-coded.
 """
 
 import json
@@ -40,7 +38,7 @@ from pathlib import Path
 # Make `app` importable regardless of the current working directory.
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from app.services import retriever  # noqa: E402
+from app import rag  # noqa: E402
 from app.config import settings  # noqa: E402
 
 DATASET_PATH = Path(__file__).parent / "eval_dataset.json"
@@ -64,7 +62,7 @@ def run_evaluation():
 
         start = time.time()
         # Always fetch 5 so we can compute Hit@1/3/5 from one retrieval call.
-        results = retriever.retrieve(question, top_k=5)
+        results = rag.retrieve(question, top_k=5)
         latency = time.time() - start
         latencies.append(latency)
 
