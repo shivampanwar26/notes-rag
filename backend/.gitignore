@@ -1,0 +1,38 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Uploaded documents and vector DB are user data, not source code
+data/documents/*
+!data/documents/.gitkeep
+data/chroma/*
+!data/chroma/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment variables
+.env
+
+# Node
+node_modules/
+dist/
+
+# RAG data
+backend/data/documents/*
+backend/data/chroma/*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

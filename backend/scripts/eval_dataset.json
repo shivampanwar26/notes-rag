@@ -1,0 +1,10 @@
+[
+  {"question": "What is demand paging?", "expected_source": "Operating Systems.pdf"},
+  {"question": "What is a process in an operating system?", "expected_source": "Operating Systems.pdf"},
+  {"question": "What is the difference between TCP and UDP?", "expected_source": "Computer Networks.pdf"},
+  {"question": "What is the OSI model?", "expected_source": "Computer Networks.pdf"},
+  {"question": "What is normalization in databases?", "expected_source": "DBMS.pdf"},
+  {"question": "What is the time complexity of a B+ tree search?", "expected_source": "DBMS.pdf"},
+  {"question": "Explain gradient descent.", "expected_source": "Machine Learning.pdf"},
+  {"question": "What is overfitting in machine learning?", "expected_source": "Machine Learning.pdf"}
+]

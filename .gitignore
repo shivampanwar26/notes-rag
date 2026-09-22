@@ -1,0 +1,33 @@
+node_modules/
+dist/
+.env
+__pycache__/
+*.pyc
+.venv/
+venv/
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment variables
+.env
+
+# Node
+node_modules/
+dist/
+
+# RAG data
+backend/data/documents/*
+backend/data/chroma/*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,28 @@
+# --- Web framework ---
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+python-multipart==0.0.20
+pydantic==2.10.4
+pydantic-settings==2.7.0
+python-dotenv==1.0.1
+
+# --- PDF text extraction (Phase 2) ---
+pymupdf==1.25.1
+
+# --- Chunking (Phase 2) ---
+# Only the lightweight text-splitters package, not the full LangChain
+# framework -- this is the one place LangChain genuinely simplifies
+# something (paragraph/sentence-aware recursive splitting) without
+# pulling in an agent framework we don't need.
+langchain-text-splitters==0.3.4
+
+# --- Embeddings + reranking (Phase 3, Phase 8) ---
+sentence-transformers==3.3.1
+
+# --- Vector database (Phase 3) ---
+chromadb
+
+# --- LLM calls (Phase 5) ---
+# The OpenAI SDK also talks to any OpenAI-compatible endpoint, including
+# Ollama's local server -- see app/services/llm.py and .env's LLM_PROVIDER.
+openai==1.58.1
