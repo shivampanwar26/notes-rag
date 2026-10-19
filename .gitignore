@@ -31,3 +31,23 @@ backend/data/chroma/*
 # OS
 .DS_Store
 Thumbs.db
+
+# secrets
+.env
+
+# runtime data (uploaded PDFs + vector index)
+backend/data/
+
+# python
+.venv/
+__pycache__/
+*.pyc
+
+# node
+node_modules/
+dist/
+
+# os / editor
+.DS_Store
+.vscode/
+.idea/

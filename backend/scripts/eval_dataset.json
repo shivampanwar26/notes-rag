@@ -1,10 +1,862 @@
 [
-  {"question": "What is demand paging?", "expected_source": "Operating Systems.pdf"},
-  {"question": "What is a process in an operating system?", "expected_source": "Operating Systems.pdf"},
-  {"question": "What is the difference between TCP and UDP?", "expected_source": "Computer Networks.pdf"},
-  {"question": "What is the OSI model?", "expected_source": "Computer Networks.pdf"},
-  {"question": "What is normalization in databases?", "expected_source": "DBMS.pdf"},
-  {"question": "What is the time complexity of a B+ tree search?", "expected_source": "DBMS.pdf"},
-  {"question": "Explain gradient descent.", "expected_source": "Machine Learning.pdf"},
-  {"question": "What is overfitting in machine learning?", "expected_source": "Machine Learning.pdf"}
+  {
+    "question": "What is an operating system?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What are the main functions of an operating system?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What are the goals of an operating system?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a batch-processing operating system?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a multiprogramming operating system?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is multitasking in an operating system?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a multiprocessing operating system?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a distributed operating system?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a real-time operating system?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is the difference between multiprogramming and multitasking?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a program?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a process?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a thread?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is the difference between a process and a thread?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is the difference between multitasking and multithreading?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a kernel?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is user space?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a shell in an operating system?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What are the major functions of the kernel?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a monolithic kernel?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a microkernel?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a hybrid kernel?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is inter-process communication?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "How do processes communicate with each other?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a system call?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "Why are system calls required?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What are the major types of system calls?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is process control in system calls?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is file management in system calls?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What happens when a computer is turned on?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is POST?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is the role of BIOS or UEFI during booting?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a bootloader?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is the difference between a 32-bit and 64-bit operating system?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a process control block?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What information is stored in a PCB?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What are the different states of a process?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is the ready state of a process?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is the waiting state of a process?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a process queue?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a ready queue?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a job queue?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a dispatcher?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is swapping?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is context switching?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is an orphan process?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a zombie process?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is process scheduling?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a CPU scheduler?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is preemptive scheduling?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is non-preemptive scheduling?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is FCFS scheduling?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is the convoy effect?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is SJF scheduling?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is preemptive SJF scheduling?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is priority scheduling?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is starvation in CPU scheduling?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is aging in CPU scheduling?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is round-robin scheduling?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "How does the time quantum affect round-robin scheduling?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is multilevel queue scheduling?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is multilevel feedback queue scheduling?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is concurrency in an operating system?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is thread scheduling?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is thread context switching?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What are the benefits of multithreading?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a critical section?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a race condition?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "How can race conditions be prevented?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is mutual exclusion?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a mutex or lock?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a semaphore?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a binary semaphore?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a counting semaphore?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a conditional variable?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is the dining philosophers problem?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "How can semaphores be used in the dining philosophers problem?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a deadlock?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What are the four necessary conditions for deadlock?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is mutual exclusion as a deadlock condition?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is hold and wait?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is no preemption?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is circular wait?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is deadlock prevention?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is deadlock avoidance?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a safe state in deadlock avoidance?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is an unsafe state?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is the Banker's algorithm?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "How is deadlock detected using a wait-for graph?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "How can a system recover from deadlock?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is paging?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "How does paging avoid external fragmentation?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a page table?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a page and what is a frame?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a TLB?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a TLB hit?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a TLB miss?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is segmentation in memory management?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is virtual memory?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is demand paging?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a page fault?",
+    "expected_source": "Operating Systems.pdf"
+  },
+  {
+    "question": "What is a DBMS?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What are the advantages of using a DBMS?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is the difference between a DBMS and a file system?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a database?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a relational database?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is an RDBMS?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a relation in a relational database?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a tuple?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is an attribute?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a domain in DBMS?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a schema?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a database instance?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a primary key?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a candidate key?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a super key?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is an alternate key?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a composite key?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a foreign key?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a surrogate key?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is entity integrity?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is referential integrity?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What are constraints in DBMS?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a NOT NULL constraint?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a UNIQUE constraint?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a CHECK constraint?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a DEFAULT constraint?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is normalization?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "Why is normalization used in DBMS?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is functional dependency?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a trivial functional dependency?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a non-trivial functional dependency?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a partial dependency?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a transitive dependency?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is First Normal Form (1NF)?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is Second Normal Form (2NF)?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is Third Normal Form (3NF)?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is BCNF?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is the difference between 3NF and BCNF?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is denormalization?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What are insertion, deletion, and update anomalies?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is an ER model?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is an entity?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is an entity set?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a relationship in an ER model?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is cardinality in an ER diagram?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a one-to-one relationship?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a one-to-many relationship?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a many-to-many relationship?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a weak entity?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is an ER diagram?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is SQL?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What are the main categories of SQL commands?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is DDL?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is DML?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is DQL?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is DCL?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is TCL?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is the difference between DELETE, DROP, and TRUNCATE?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is the difference between WHERE and HAVING?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is the difference between GROUP BY and ORDER BY?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a JOIN in SQL?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is an INNER JOIN?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a LEFT JOIN?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a RIGHT JOIN?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a FULL OUTER JOIN?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a CROSS JOIN?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a self join?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a subquery?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a correlated subquery?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a view?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What are the advantages of views?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is an index?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "Why are indexes used in databases?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a clustered index?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a non-clustered index?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a B-tree index?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a B+ tree?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is the time complexity of searching in a balanced B+ tree?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a transaction?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What are the ACID properties?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is atomicity?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is consistency in a database transaction?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is isolation?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is durability?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a schedule in DBMS?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a serial schedule?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a concurrent schedule?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is conflict serializability?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is view serializability?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a recoverable schedule?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a cascading rollback?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a deadlock in DBMS transactions?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is concurrency control?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a lock in DBMS?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a shared lock?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is an exclusive lock?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is two-phase locking (2PL)?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is strict two-phase locking?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a database checkpoint?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is database recovery?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is log-based recovery?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is shadow paging?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a stored procedure?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a database trigger?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a cursor in SQL?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a function in SQL?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a materialized view?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a NoSQL database?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is the difference between SQL and NoSQL databases?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What are the common types of NoSQL databases?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a document database?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a key-value database?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a graph database?",
+    "expected_source": "DBMS.pdf"
+  },
+  {
+    "question": "What is a column-family database?",
+    "expected_source": "DBMS.pdf"
+  }
 ]

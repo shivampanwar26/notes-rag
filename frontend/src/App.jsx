@@ -3,9 +3,6 @@ import api from "./api";
 import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
 
-// While any document is still "uploaded" or "processing", poll the
-// document list so status badges (and the chat filter dropdown) update
-// automatically once indexing finishes -- no manual refresh needed.
 const POLL_INTERVAL_MS = 2500;
 
 export default function App() {
@@ -21,55 +18,44 @@ export default function App() {
   }
 
   useEffect(() => {
-    loadDocuments();
+    loadDocuments().catch(() => {});
     return () => clearInterval(pollRef.current);
   }, []);
 
   useEffect(() => {
-    const stillWorking = documents.some(
-      (d) => d.status === "uploaded" || d.status === "processing"
-    );
+    const stillWorking = documents.some((doc) => ["uploaded", "processing"].includes(doc.status));
     clearInterval(pollRef.current);
-    if (stillWorking) {
-      pollRef.current = setInterval(loadDocuments, POLL_INTERVAL_MS);
-    }
+    if (stillWorking) pollRef.current = setInterval(() => loadDocuments().catch(() => {}), POLL_INTERVAL_MS);
     return () => clearInterval(pollRef.current);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [documents]);
 
   function handleUploaded(newDoc) {
-    setDocuments((prev) => [newDoc, ...prev]);
+    setDocuments((current) => [newDoc, ...current.filter((doc) => doc.document_id !== newDoc.document_id)]);
   }
 
   async function handleDelete(documentId) {
     await api.delete(`/api/documents/${documentId}`);
-    setDocuments((prev) => prev.filter((d) => d.document_id !== documentId));
+    setDocuments((current) => current.filter((doc) => doc.document_id !== documentId));
   }
 
-  async function handleSend(question, documentId) {
-    setMessages((prev) => [...prev, { role: "user", text: question }]);
+  async function handleSend(question, documentId, includeTrace) {
+    setMessages((current) => [...current, { role: "user", text: question }]);
     setIsChatLoading(true);
     try {
       const response = await api.post("/api/chat", {
         question,
         document_id: documentId,
+        include_trace: includeTrace,
       });
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          text: response.data.answer,
-          sources: response.data.sources,
-        },
-      ]);
+      setMessages((current) => [...current, {
+        role: "assistant",
+        text: response.data.answer,
+        sources: response.data.sources,
+        trace: response.data.trace,
+      }]);
     } catch (err) {
-      const detail =
-        err.response?.data?.detail ||
-        "Something went wrong reaching the server. Is the backend running?";
-      setMessages((prev) => [
-        ...prev,
-        { role: "assistant", text: detail, isError: true },
-      ]);
+      const detail = err.response?.data?.detail || "Something went wrong reaching the server. Is the backend running?";
+      setMessages((current) => [...current, { role: "assistant", text: detail, isError: true }]);
     } finally {
       setIsChatLoading(false);
     }
@@ -77,18 +63,9 @@ export default function App() {
 
   return (
     <div className="app-shell">
-      <Sidebar
-        documents={documents}
-        onUploaded={handleUploaded}
-        onDelete={handleDelete}
-      />
+      <Sidebar documents={documents} onUploaded={handleUploaded} onDelete={handleDelete} />
       <main className="main">
-        <Chat
-          documents={documents}
-          messages={messages}
-          isLoading={isChatLoading}
-          onSend={handleSend}
-        />
+        <Chat documents={documents} messages={messages} isLoading={isChatLoading} onSend={handleSend} />
       </main>
     </div>
   );
